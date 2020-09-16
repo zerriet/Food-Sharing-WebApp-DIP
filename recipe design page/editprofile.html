@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/feeds.css">
+        
+        <title>Users Details</title>
+    </head>
+
+    <body id="home">
+        <!-- Beginning of Nav Bar -->
+        <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+            <div class="container">
+               <a class="navbar-brand" href="feeds.html">ReSharePeace</a>
+                    <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              My Profile
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="feeds.html">Home</a>
+                              <a class="dropdown-item" href="favourite.html">Favourites</a>
+                              <a class="dropdown-item" href="class.html">Classes</a>
+                              <a class="dropdown-item" href="bookings.html">Bookings</a>
+                              <a class="dropdown-item" href="profile.html">Profile</a>
+                              <a class="dropdown-item" href="login.html">Logout</a>
+                            </div>
+                          </div>
+           </div>   
+       </nav>
+       <!-- End of Navbar -->
+
+        <!--Start of Main Section -->
+        
+
+        <section id="share-head-section" class="bg-light text-primary recipe-container" style="margin-top:-40px;">
+                <div class="container">
+                    <h1 class="page-header" align="center">
+                       User Profile <a data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil"></i></a>
+                       
+                    </h1>
+                    <div class="row">
+                    <div class="col-md-1"></div>          
+                    <div class="col-md-2"> 
+                        <div class="MyPicture"><img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png"></div>
+                    </div>
+                    <div class="col-md-6 user-details">
+                        <!--Users Details -->
+                        <div class="card">
+                            <div class="card-block text-nowrap" align="left">
+                                <strong>Name:</strong>  User's Name
+                            </div class="card-block text-nowrap"><br>
+                            <div  align="left">
+                                <strong>Username:</strong> User's Username
+                            </div><br>
+                            <div class="card-block text-nowrap" align="left">
+                                <strong>Email Address</strong> User's Email Address
+                            </div><hr>
+                            <div class="card-block text-nowrap" align="left">
+                                <strong>Users Recipes:</strong>
+                            </div><br>
+                            <!--User's Recipe -->
+                            
+                                
+                                    
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Start of Login Modal -->
+    <div id="editModal" class="modal fade text-dark">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="contactModalTitle" class="modal-title">
+                           Edit Your Profile
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="Name" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="Name" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address:</label>
+                                <input type="password" class="form-control" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="profile.html">
+                        <button class="btn btn-primary btn-block">
+                            Update
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of login Modal -->
+       
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

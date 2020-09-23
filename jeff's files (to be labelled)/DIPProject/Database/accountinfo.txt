@@ -1,0 +1,15 @@
+create table accountinfo
+(id int not null autoincrement,
+ username varchar(80),
+ password varchar(80),
+ name varchar(80)
+);
+
+insert into accountinfo 
+(username,password,name)values ('jeff','jeff','jeff');
+
+insert into accountinfo 
+(username,password,name)values ('joe97','xxxx','joe');
+
+insert into accountinfo 
+(username,password,name)values ('jason','12345678','jason');

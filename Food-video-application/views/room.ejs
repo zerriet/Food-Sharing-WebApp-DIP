@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Clone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <%# importing bootstrap, responsible for nice fonts %>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>                             <%# importing from socket io %>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>   <%# importing from peer js %>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>           <%# importing from fontawesome %>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <%# The 3 lines import JS, such as jquery and popper.js %> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <script>
+        const ROOM_ID = "<%= roomId %>";
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+
+    
+    
+
+</head>
+<body>
+    
+   
+    <div class='toast' style='display:none'><span>Someone give you points or donations</span></div>
+    <div class = "main">
+
+        <div class = "main__left">
+            
+        
+            <div class="btn-group" style="margin-left: auto;  margin-right:auto;  " role="group" aria-label="Basic example">
+                <button  onclick="CopyLinkToMeeting()" type="button" 
+                class="btn btn-secondary myButton m-1 btn-sm" title="click to copy link"> <i class="fas fa-share"></i> <span id="copyBtn"> Copy</span></button>
+                <button id="pCheck" style="display: none; background-color: #c0814d; border-color: #c0814d;" type="button" class="btn btn-info myButton m-1 btn-sm"> Points: <span class="badge badge-light" id="PointsCount">0</span></button>
+                <button id="dCheck" style="display: none; background-color: #c0814d; border-color: #c0814d;" type="button" class="btn btn-info myButton m-1 btn-sm"> Donations: <span class="badge badge-light" id="DonationsCount">0</span></button>
+            </div>
+            
+            <h1 class="main_text">ReSharePeace </h1>
+            <p class="main_text_class"> Masterclass Kitchen: Matcha Cake    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="32" height="32"
+                viewBox="0 0 226 226"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#ffffff"><path d="M113,0c-62.40805,0 -113,44.75181 -113,99.96154c0,28.31791 13.34405,53.81761 34.73528,72.01713c-5.8741,24.88853 -35.6181,35.14273 -33.68269,42.20523c18.84465,10.83143 69.47055,-9.8128 85.9384,-17.04507c8.35276,1.76563 17.04507,2.78425 26.00901,2.78425c62.40806,0 113,-44.7518 113,-99.96154c0,-55.20973 -50.59194,-99.96154 -113,-99.96154zM129.73948,151.36839c-4.24429,1.76563 -14.125,6.3155 -23.22476,6.3155c-8.42067,0 -19.89723,-3.87079 -19.89723,-16.29808c0,-14.39663 10.1863,-34.90505 10.1863,-46.78906c0,-13.24219 -17.21485,-6.07783 -18.47115,-5.60247l1.73167,-7.0625c4.24429,-1.73166 14.32872,-6.3155 23.25871,-6.3155c7.23227,0 19.55769,2.61448 19.55769,16.29808c0,13.7515 -10.1863,35.7539 -10.1863,46.78906c0,3.05589 -0.40745,7.8774 9.09976,7.8774c3.70102,0 8.79417,-1.86748 9.71093,-2.27493zM117.6857,62.54387c-6.14574,0 -15.48317,-4.21034 -15.48317,-14.39663c0,-10.32212 9.94862,-14.4985 15.48317,-14.4985c6.55318,0 15.44921,4.78756 15.44921,14.4985c0,5.8741 -4.61779,14.39663 -15.44921,14.39663z"></path></g></g></svg>
+            
+                  </p>
+                <p id="secondTenthsExample" style="margin-left: auto; margin-right:20px">
+                <span class="hours" style="color:white; font-family: 'Comic Sans MS', 'Comic Sans', cursive; ">0</span><span style="color:white; font-family: 'Comic Sans MS', 'Comic Sans', cursive;">:</span><span class="values" style="color:white; font-family: 'Comic Sans MS', 'Comic Sans', cursive;">00:00:00</span>
+             </p>
+             <img class= "recipe_images" src="https://i0.wp.com/coupleeatsfood.com/wp-content/uploads/2017/05/Green-Tea-Cake-White-Chocolate-Buttercream.jpg?fit=3456%2C3460" alt="Avatar" style="width:80px; height:80px;" >
+          
+            <!-- You can change from what time it will start counting up, just put in specific time to replace 00. If you want to start from 5 mins up, just put 05 (ex) minutes: 05 -->
+             <script src="easytimer.js"></script>
+             <script>
+                 var timer = new Timer();
+                 timer.start({precision: 'secondTenths', startValues: {secondTenths: 00, seconds: 00, minutes: 00, hours: 00,}}, );
+                 timer.addEventListener('secondTenthsUpdated', function (e) {
+                 $('#secondTenthsExample .hours').html(timer.getTotalTimeValues().hours);
+                 $('#secondTenthsExample .values').html(timer.getTimeValues().toString(['minutes', 'seconds', 'secondTenths']));
+         });            
+             </script>
+            
+            <!-- <div class="row"> -->
+                <!-- <button onclick="CopyLinkToMeeting()" class="btn btn-dark rounded-0 btn-sm" title="click to copy link">
+    
+                    <i class="fas fa-share"></i>
+    
+                    <span id="copyBtn"> Copy</span>
+                 </button> -->
+            <!-- </div> -->
+            <div class = "main__videos">
+
+                <div id = "video-grid" class="row">   <%# video component %>
+
+                </div>
+            </div>
+
+            <div class = "main__controls">  
+
+                <div class = "main__controls__block">
+                    <div class="main__controls__button">
+                        <button id="openModalClicked" style="display: none; border: none;" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> <img src="https://img.icons8.com/cotton/44/000000/love-for-money.png"/><br /><span class = "button_styleunique" >Gifts</span></button>
+                    </div>
+                </div>
+               
+
+                <div class="main__controls__block">
+
+                    <div onclick = "muteUnmute()" class = "main__controls__button main__mute_button">
+
+                        <img src="https://img.icons8.com/color/48/000000/silenced.png"/>   <%# i class references icon from font awesome %>
+                        <span class = "button_style" > Mute </span>
+                    </div>
+
+                    <div onclick = "playStop()" class = "main__controls__button main__video_button">
+                        <img src="https://img.icons8.com/color/48/000000/reviewer-male--v1.png"/>
+                        <span class = "button_style" > Stop Video </span>
+                    </div>
+
+                    <div class="main__controls__button">
+                        <img src="https://img.icons8.com/color/48/000000/man-raising-hand-icon.png"/>
+                       <span class = "button_style" >Raise Hand</span>
+                    </div>
+
+                    <div class="main__controls__button">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="48" height="48"
+                        viewBox="0 0 226 226"
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="48" height="48"
+viewBox="0 0 226 226"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g><path d="M136.54167,155.375v0l-23.54167,4.70833l-23.54167,-4.70833c0,0 -51.79167,9.35075 -51.79167,61.20833h150.66667c0,-51.67396 -51.79167,-61.20833 -51.79167,-61.20833" fill="#ffffff"></path><path d="M113,169.5c-18.83333,0 -23.54167,-14.125 -23.54167,-14.125v-28.25h47.08333v28.25c0,0 -4.70833,14.125 -23.54167,14.125z" fill="#ff9800"></path><path d="M164.79167,98.875c0,5.20742 -4.21396,9.41667 -9.41667,9.41667c-5.20742,0 -9.41667,-4.20925 -9.41667,-9.41667c0,-5.20271 4.20925,-9.41667 9.41667,-9.41667c5.20271,0 9.41667,4.21396 9.41667,9.41667M80.04167,98.875c0,-5.20271 -4.21396,-9.41667 -9.41667,-9.41667c-5.20742,0 -9.41667,4.21396 -9.41667,9.41667c0,5.20742 4.20925,9.41667 9.41667,9.41667c5.20271,0 9.41667,-4.20925 9.41667,-9.41667" fill="#ffa726"></path><path d="M155.375,70.625c0,-35.94813 -84.75,-23.40513 -84.75,0v32.95833c0,23.40513 18.96987,42.375 42.375,42.375c23.40513,0 42.375,-18.96987 42.375,-42.375z" fill="#ffb74d"></path><path d="M113,28.25c-28.60313,0 -47.08333,23.19325 -47.08333,51.79167v10.75854l9.41667,8.07479v-23.54167l56.5,-18.83333l18.83333,18.83333v23.54167l9.41667,-8.20192v-10.63142c0,-18.95104 -4.88725,-37.742 -28.25,-42.375l-4.70833,-9.41667z" fill="#424242"></path><path d="M127.125,98.875c0,-2.59429 2.10933,-4.70833 4.70833,-4.70833c2.599,0 4.70833,2.11404 4.70833,4.70833c0,2.59429 -2.10933,4.70833 -4.70833,4.70833c-2.599,0 -4.70833,-2.11404 -4.70833,-4.70833M89.45833,98.875c0,2.59429 2.10933,4.70833 4.70833,4.70833c2.599,0 4.70833,-2.11404 4.70833,-4.70833c0,-2.59429 -2.10933,-4.70833 -4.70833,-4.70833c-2.599,0 -4.70833,2.11404 -4.70833,4.70833" fill="#784719"></path><path d="M143.60417,18.83333c-3.02746,0 -5.92308,0.54617 -8.62567,1.50196c-5.16975,-6.63404 -13.21158,-10.91862 -22.27042,-10.91862c-8.98821,0 -16.97354,4.20925 -22.148,10.74912c-2.57075,-0.85221 -5.311,-1.33246 -8.16425,-1.33246c-14.30392,0 -25.89583,11.59663 -25.89583,25.89583c0,14.30863 11.59192,25.89583 25.89583,25.89583c7.09075,0 13.50821,-2.85325 18.18829,-7.46742c3.67721,1.7515 7.77346,2.75908 12.12396,2.75908c4.50117,0 8.73867,-1.07821 12.51475,-2.95212c4.6895,4.73188 11.19171,7.66046 18.38133,7.66046c14.29921,0 25.89583,-11.58721 25.89583,-25.89583c0,-14.29921 -11.59663,-25.89583 -25.89583,-25.89583z" fill="#ffffff"></path><path d="M160.08333,80.04167c0,0 -23.54167,-4.70833 -47.08333,-4.70833c-23.54167,0 -47.08333,4.70833 -47.08333,4.70833c0,-18.83333 4.70833,-37.66667 4.70833,-37.66667c0,0 11.187,-9.41667 43.55208,-9.41667c32.36979,0 41.19792,9.41667 41.19792,9.41667c0,0 4.70833,18.83333 4.70833,37.66667z" fill="#ffffff"></path><path d="M96.52083,188.33333c-3.90051,0 -7.0625,3.16199 -7.0625,7.0625c0,3.90051 3.16199,7.0625 7.0625,7.0625c3.90051,0 7.0625,-3.16199 7.0625,-7.0625c0,-3.90051 -3.16199,-7.0625 -7.0625,-7.0625zM129.47917,188.33333c-3.90051,0 -7.0625,3.16199 -7.0625,7.0625c0,3.90051 3.16199,7.0625 7.0625,7.0625c3.90051,0 7.0625,-3.16199 7.0625,-7.0625c0,-3.90051 -3.16199,-7.0625 -7.0625,-7.0625z" fill="#cccccc"></path><path d="M136.52283,149.47075c-2.05283,3.45121 -10.10408,15.32092 -23.52283,15.32092c-13.66358,0 -21.76192,-12.31229 -23.63112,-15.50454l-6.26208,7.68871c1.55375,2.24117 3.84671,5.085 6.82708,7.81583h-9.89221c-2.60371,0 -4.70833,2.10462 -4.70833,4.70833v47.08333h9.41667v-42.375h28.25c15.68346,0 25.52858,-10.94217 29.87437,-17.21367c-0.08004,0 -6.25737,-7.58042 -6.35154,-7.52392z" fill="#cccccc"></path></g></g></svg>
+                       <span class = "button_style" >Participants</span>
+                    </div>
+
+                    <div class="main__controls__button">
+
+                        <img src="https://img.icons8.com/color/48/000000/thinking-male--v1.png"/>
+
+                       <span class = "button_style" >Chat</span>
+
+                       
+                    </div>
+                 </div>
+
+                <div class = "main__controls__block">
+                   
+                    <div class = "main__controls__button">
+
+                           <a href="javascript:if(confirm('Leave the class?'))window.close()"><img src="https://img.icons8.com/fluent/48/000000/door-opened.png"/>
+                            <br/><span class = "leave_meeting">Leave</span></a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class = "main__right">         <%# chat side %>
+            
+
+            <div class ="main__header">
+
+                <h4 class="chatroom">Chat</h4>
+                <hr style="border-top: 1px solid white; background: transparent;"> <hr/>
+            </div>
+
+            <div class = "main__chat_window">
+                <ul class = "messages">   <%# list item %>
+
+
+                </ul>
+            </div>
+
+            <div class = "main__message_container">  <%# contains our message input %>
+                <div class = "main__message_container_button">
+
+                    <img src="https://img.icons8.com/color/35/000000/attach.png"/>
+                </div>
+                 <input id = "chat_message" type = "text" placeholder="  Let's Talk!"> 
+
+                
+                <div class = "main__message_container_button">
+
+                    <img src="https://img.icons8.com/fluent/35/000000/forward.png"/>
+                </div>
+
+            </div> 
+            
+             
+        </div>
+
+    </div>
+    
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Send A Gift!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-row">
+                    <div id="alertRef" style="width: 99%;display: none;" class="alert alert-danger" role="alert">
+                       Error: You have not input any value.
+                      </div>
+                    <div class="form-group col-md-6">
+                      <label for="pointsLabels">Points</label>
+                      <input type="number" min="1" class="form-control" id="pointsLabels" placeholder="Points">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="donationsLabels">Donations</label>
+                      <input type="number" min="1" class="form-control" id="donationsLabels" placeholder="Donations ($)">
+                    </div>
+                  </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="submitReviewsBtn" type="button" class="btn btn-primary">Send</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script src = "jquery.toaster.js"></script>  
+    <script src = "script.js"></script>  
+</body>
+</html>

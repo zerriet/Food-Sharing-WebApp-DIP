@@ -1,0 +1,17 @@
+List of libraries to install:
+
+Npm install express
+Npm install -g nodemon
+Npm install ejs
+Npm install uuid
+Npm install socket.io
+Npm install peer
+
+
+To run:
+Npm start
+run locahost 443
+
+
+
+Delpoyed on heroku - checked

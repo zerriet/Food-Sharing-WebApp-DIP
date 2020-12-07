@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Search results</title>
+<!-- Tastebite External CSS -->
+<link href="assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="assets/css/styles.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<!-- resharepeace Section, P 0 -->
+<section class="resharepeace-section p-0">
+  <!-- resharepeace Header, Bg White, Pt 0 -->
+  <header class="resharepeace-header bg-white pt-3 pt-md-0">
+    
+    <div class="bg-lightest-gray py-3 header-topbar resharepeace-svg mb-3">
+
+      <div class="container">
+        <a class="navbar-brand" href="home.html">
+          <h5> ReSharePeace </h5>
+        </a>
+        <div class="row align-items-center w-100">
+          
+          <div class="col-6 order-2 order-md-0">
+            <div class="d-flex align-items-center justify-content-end justify-content-md-start">
+            </div>
+          </div>
+
+          <div class="col-6 text-md-right">
+            <div >
+              <a href="javascript:void(0);" class="search-link d-none d-md-inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26.667" height="26.667" viewBox="0 0 26.667 26.667">
+                  <path d="M24.39,26.276l-4.9-4.9a12.012,12.012,0,1,1,1.885-1.885l4.9,4.9a1.334,1.334,0,0,1-1.886,1.886ZM2.666,12a9.329,9.329,0,0,0,15.827,6.7,1.338,1.338,0,0,1,.206-.206A9.332,9.332,0,1,0,2.666,12Z"/>
+                </svg>
+              </a>
+
+              <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog cascading-modal" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+
+                    <!--Modal cascading tabs-->
+                    <div class="modal-c-tabs">
+
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                          Register</a>
+                        </li>
+                      </ul>
+
+                      <!-- Tab panels -->
+                      <div class="tab-content">
+
+                        <!--Panel 7-->
+                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                          <!--Body-->
+                          <div class="modal-body mb-1 text-center">
+                            <div class="md-form form-sm mb-5">
+                              <i class="fas fa-envelope"></i>
+                              <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                              <label data-error="wrong" data-success="right" for="modalLRInput10">Email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4 text-center">
+                              <i class="fas fa-lock prefix"></i>
+                              <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                              <label data-error="wrong" data-success="right" for="modalLRInput11">Password</label>
+                            </div>
+
+                            <div class="text-center mt-2">
+                              <a href="homeUser.html"> <button class="btn btn-info">Log in <i class="fas fa-sign-in-alt ml-1"></i></button> </a>
+                            </div>
+                          </div>
+
+                          <!--Footer-->
+                          <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                              <p>Not a member? <a href="#panel8" class="blue-text" data-keyboard="true" data-target="panel8">Sign Up</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close
+                            </button>
+                          </div>
+                        </div>
+                        <!--/.Panel 7-->
+
+                        <!--Panel 8-->
+                        <div class="tab-pane fade" id="panel8" role="tabpanel">
+                          <!--Body-->
+                          <div class="modal-body">
+                            <div class="md-form form-sm mb-5 text-center">
+                              <div class="row">
+                                <div class="col-6">
+                                  <i class="far fa-id-card prefix"></i>
+                                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                  <label data-error="wrong" data-success="right" for="modalLRInput12">First Name</label> 
+                                </div>
+
+                                <div class="col-6">
+                                  <i class="far fa-id-card prefix"></i>
+                                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                  <label class="text-align-left" data-error="wrong" data-success="right" for="modalLRInput12">Last Name</label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="md-form form-sm mb-5 text-center">
+                              <div class="row">
+                                <div class="col-6">
+                                  <i class="fas fa-envelope center"></i>
+                                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                  <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label> 
+                                </div>
+
+                                <div class="col-6">
+                                  <i class="far fa-id-badge"></i>
+                                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                  <label data-error="wrong" data-success="right" for="modalLRInput12">Username</label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="md-form form-sm mb-5 text-center">
+                              <div class="row">
+                                <div class="col-6">
+                                  <i class="fas fa-lock"></i>
+                                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate"><label data-error="wrong" data-success="right" for="modalLRInput12">Password</label>      
+                                </div>
+
+                                <div class="col-6">
+                                  <i class="fas fa-lock"></i>
+                                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                  <label data-error="wrong" data-success="right" for="modalLRInput12">Confirm Password</label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                              <a href="home.html"> <button class="btn btn-info">Sign up </a><i class="fas fa-sign-in-alt ml-1"></i></button>
+                            </div>
+                          </div>
+
+                          <!--Footer-->
+                          <div class="modal-footer">
+                            <div class="options text-right">
+                              <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close
+                            </button>
+                          </div>
+                        </div>
+                        <!--/.Panel 8-->
+
+                      </div>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+
+                </div>
+              </div>
+
+              <!--Modal: Login / Register Form-->
+              <div>
+                <a href="" class="btn btn-outline-info btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- resharepeace Search -->
+    <div class="resharepeace-search">
+      <div class="container">
+        <div class="input-group search-box">
+          <input type="text" name="Search" placeholder="Search" class="form-control" id="Search">
+          <button type="button"><img src="assets/images/icons/close.svg" alt="img"></button>
+        </div>
+        <div class="search-results" id="SearchList">
+          
+          <div class="resharepeace-search-list">
+            <a href="#0">
+              <figure><img src="assets/images/menus/cheesecake.jpg" class="rounded-2" alt="Menu" width="65" height="49"></figure>
+              <div class="resharepeace-search-name">
+                <strong class="small">Creamy Homemade Cheesecake</strong>
+              </div>
+            </a>
+          </div>
+          <div class="resharepeace-search-list">
+            <a href="#0">
+              <figure><img src="assets/images/menus/donut.jpg" class="rounded-2" alt="Menu" width="65" height="49"></figure>
+              <div class="resharepeace-search-name">
+                <strong class="small">Donut</strong>
+              </div>
+            </a>
+          </div>
+          <div class="resharepeace-search-list">
+            <a href="#0">
+              <figure><img src="assets/images/menus/tiramisu.jpg" class="rounded-2" alt="Menu" width="65" height="49"></figure>
+              <div class="resharepeace-search-name">
+                <strong class="small">Tiramisu</strong>
+              </div>
+            </a>
+          </div>
+          <div class="resharepeace-search-list">
+            <a href="#0">
+              <figure><img src="assets/images/menus/muffin.jpg" class="rounded-2" alt="Menu" width="65" height="49"></figure>
+              <div class="resharepeace-search-name">
+                <strong class="small">Blueberry Muffin</strong>
+              </div>
+            </a>
+          </div>
+          <div class="resharepeace-search-list">
+            <a href="recipePancake.html">
+              <figure><img src="assets/images/menus/pancake.jpg" class="rounded-2" alt="Menu" width="65" height="49"></figure>
+              <div class="resharepeace-search-name">
+                <strong class="small">Japanese Souffle Pancake</strong>
+              </div>
+            </a>
+          </div>
+          <div class="resharepeace-search-list">
+            <a href="#0">
+              <figure><img src="assets/images/menus/waffle.jpg" class="rounded-2" alt="Menu" width="65" height="49"></figure>
+              <div class="resharepeace-search-name">
+                <strong class="small">Homemade Waffle</strong>
+              </div>
+            </a>
+          </div>
+          <div class="text-center py-4">
+            <a href="#0" class="btn btn-sm btn-outline-dark px-4 py-2">See all results</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+    <!-- resharepeace Components, My 4, My Md 5, Desserts Box -->
+    <section class="resharepeace-components my-4 my-md-5 desserts-box">
+      <div class="row align-items-center pt-0 pt-md-5">
+        <div class="col-lg-9 col-8">
+          <h5 class="py-3 mb-0">Classes</h5>
+        </div>
+        <div class="col-lg-3 col-4">
+          <div class="sort-filter pb-0">
+            <select class="form-control">
+              <option>Date</option>
+              <option>Trending</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-6">
+          <figure class="my-3 my-md-4 resharepeace-card">
+            <a href="#0" class="resharepeace-animation stretched-link rounded-6">
+              <img src="images/maggieclass.jpg" class="w-100" alt="Menu" width="255" height="190">
+            </a>
+            <figcaption class="mt-2">
+              <a href="#0" class="text-black d-block mt-1 font-weight-semibold big">Instant Noodle Class</a>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <figure class="my-3 my-md-4 resharepeace-card">
+            <a href="#0" class="resharepeace-animation stretched-link rounded-6">
+              <img src="images/cookingclass.jpg" class="w-100" alt="Menu" width="255" height="190">
+            </a>
+            <figcaption class="mt-2">
+              <a href="#0" class="text-black d-block mt-1 font-weight-semibold big">Cooking Class</a>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <figure class="my-3 my-md-4 resharepeace-card">
+            <a href="bakingClass.html" class="resharepeace-animation stretched-link rounded-6">
+              <img src="images/bakingclass.jpg" class="w-100" alt="Menu" width="255" height="190">
+            </a>
+            <figcaption class="mt-2">
+              <a href="bakingClass.html" class="text-black d-block mt-1 font-weight-semibold big">Baking Class</a>
+            </figcaption>
+          </figure>
+        </div>
+        
+        
+  <!-- resharepeace Footer, Pt 3, Pt Md 5, Mt 5 -->
+  <footer >
+    
+  </footer>
+</section>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/html5.min.js"></script>
+<script src="assets/js/hover-animation.min.js"></script>
+<script src="assets/js/jquery.malihu.PageScroll2id.min.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/masonry.min.js"></script>
+<script src="assets/js/cripts.js"></script>
+</body>
+</html>

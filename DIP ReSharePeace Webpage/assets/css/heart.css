@@ -1,0 +1,20 @@
+
+
+.fav {
+	postion: absolute;
+
+}
+.fav i{
+	font-size: 1.5rem;
+	transition: .4s;
+
+}
+.fav:hover i{
+	color:  #f50057;
+
+}
+
+.fas{
+	color: #f50057;
+	transition: .4s;
+}

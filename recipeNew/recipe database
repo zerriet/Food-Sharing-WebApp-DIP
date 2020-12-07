@@ -1,0 +1,65 @@
+//Databases standardised
+
+//useraccount used to display and edit accountinfo
+create database if not exists erecipe;
+
+use  erecipe;
+
+drop table if exists useraccount;
+create table useraccount(
+userid int PRIMARY KEY,
+username varchar(50),
+email  varchar(50),
+Firstname  varchar(50),
+Lastname  varchar(50),
+password varchar(50),
+user_status varchar(50),
+user_FB  varchar(50),
+user_bio  varchar(50));
+
+insert into useraccount values (“1001", "SOON0065”, "SOON0065@e.ntu.edu.sg”,"andrew", “soon”, “abc”,"learner",
+"www.facebook.com/", "Let's live to eat and not eat to live!");
+
+
+Select * from useraccount;
+
+
+//testrecipe used to display recipes posted by user
+create database if not exists erecipe;
+
+use erecipe;
+
+drop table if exists testrecipe;
+create table testrecipe (
+recipe_id int,
+recipe_name varchar(50),
+recipe_rating varchar(50),
+recipe_timeTaken int,
+userid int,
+recipe_photo longtext);
+
+insert into testrecipe values ("890", “Tom Yum soup”, “2 Stars”, "30", "1001", "https://4.bp.blogspot.com/-Y37ZlKWdZ9M/Vwlhins91wI/AAAAAAAAFdM/PJIocTYgucQf4U8lEtC0MI2OkcYi4oztA/s1600/BBB-IMG_0838.jpgg");
+
+select * from testrecipe;
+
+
+//recipe used to display all uploaded recipes on the recipes page
+create database if not exists erecipe;
+
+use erecipe;
+
+drop table if exists recipe;
+create table recipe (
+  recipeid     int,
+  recipename  varchar(80),
+  recipetimetaken int,
+  recipeingredient text(10000),
+  recipesteps    text(10000),
+  uploaddatetime datetime,
+  photoname text(1000),
+  recipephoto LONGBLOB,
+  primary key (recipeid));
+
+insert into recipe values (0099,'Cheesecake Recipe',100,'1/2 cups of all purpose flour, 3*1/2 teaspoons of baking powder, 1 teaspoon of salt,1 tablespoon of white sugar, 1/4 cups of milk,1 egg, 3 tablespoons of  butter(melted), 1 teaspoon of vanilla extract','Step 1: In a large bowl, mix together flour, salt, baking powder and sugar; set aside. Preheat waffle iron to desired temperature. Step 2: In a separate bowl, beat the eggs. Stir in the milk, butter and vanilla. Pour the milk mixture into the flour mixture; beat until blended.Step 3: Ladle the batter into a preheated waffle iron. Cook the waffles until golden and crisp. Serve immediately.',curdate(),'Photo.png',NULL);
+
+ select * from recipe;

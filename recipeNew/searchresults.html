@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+ <head>
+ <meta charset="utf-8">
+ <meta http-equiv="x-ua-compatible" content="ie=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="css/font-awesome.min.css">
+ <link rel="stylesheet" href="css/bootstrap.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/feeds.css">
+ <title>Recipe Details</title>
+ </head>
+
+ <body id="home">
+        <!-- Beginning of Nav Bar -->
+        <nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+            <div class="container">
+               <a class="navbar-brand" >ReSharePeace</a>
+                    <div class="navbar-collapse justify-content-end" id="navbarNav">
+                       <form class="form-inline my-2 my-lg-0" action="searchresults.html">
+                           <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                           <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button> &nbsp;&nbsp;
+                           <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              My Profile
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="feeds.html">Home</a>
+                              <a class="dropdown-item" href="favourite.html">Favourites</a>
+                              <a class="dropdown-item" href="class.html">Classes</a>
+                              <a class="dropdown-item" href="bookings.html">Bookings</a>
+                              <a class="dropdown-item" href="profile.html">Profile</a>
+                              <a class="dropdown-item" href="login.html">Logout</a>
+                            </div>
+                          </div>
+                       </form>
+                   </div>
+           </div>   
+       </nav>
+<!-- End of Navbar -->
+
+<!--Start of Main Section -->
+<section id="share-head-section" class="bg-light text-secondary">
+ <div class="container-fluid">
+  <main>
+   <div class="container">
+    <div class="row"> 
+     <div class="col-md-12">
+       <p></p>
+       <form class="form-inline my-2 my-lg-0" action="searchresults.html">
+       <button class="btn btn-danger float-right dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort By:</button>
+       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#.html">Newest</a>
+        <a class="dropdown-item" href="#.html">Alpabetical Order</a>
+       </div>
+       </form>
+     </div>
+    </div>
+   </div>
+
+
+
+  <div class="container">
+   <div class="row">
+    <div class="col-sm-3">
+     <div class="panel-group">
+      <div class="panel panel-danger"> 
+       <div class="panel-heading"> Filter by: </div>
+        <div class="panel-body">
+         <p></p>
+         <p> Type of Cuisine </p>
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Western </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked1"> Japanese </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked1">
+          <label class="custom-control-label" for="defaultUnchecked"> Korean </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Chinese </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Indian </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Others </label>
+         </div>
+
+         <p></p>
+
+         <p> Type of Diet </p>
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Vegetarian </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Ketogenic </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Vegan </label>
+         </div>
+
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+          <label class="custom-control-label" for="defaultUnchecked"> Others </label>
+         </div>
+
+         <form class="form-inline my-2 my-lg-0" action="searchresults.html">
+          <div class="text-center">
+           <button class="btn btn-danger my-2 my-sm-0" type="submit">  <span class="glyphicon glyphicon-search"> </span> Apply Filters </button>  
+          </div>
+         </form>
+
+     </div>
+      <p></p>
+     </div>
+    </div>
+   </div>
+
+<div class="col-sm-9">
+ <div class ="container">
+  <div class="panel-group">
+   <div class="panel panel-danger"> 
+    <div class="panel-body">
+     <div class="row">
+      <div class="col-md-4">
+       <div class="thumbnail">
+        <a href="recipes-details-pancake.html" target="_blank">
+         <img src="img/pancake.jpg" alt="Pancake" style="width: 100%">
+         <div class="caption">
+          <p> Japanese Souffle Pancake</p>
+         </div>
+        </a>
+       </div>          
+      </div>
+
+    <div class="col-md-4">
+     <div class="thumbnail">
+      <a href="recipes-details.html" target="_blank">
+       <img src="img/pie.jpg" alt="Pie" style="width: 100%">
+        <div class="caption">
+         <p> Pie</p>
+        </div>
+      </a>
+     </div>          
+   </div>
+
+    <div class="col-md-4">
+     <div class="thumbnail">
+      <a href="recipes-details-tiramisu.html" target="_blank">
+       <img src="img/tiramisu.jpg" alt="Tiramisu" style="width: 100%">
+       <div class="caption">
+         <p> Tiramisu</p>
+       </div>
+      </a>
+     </div>          
+   </div>
+
+   <div class="col-md-4">
+    <div class="thumbnail">
+     <a href="recipes-details-waffle.html" target="_blank">
+      <img src="img/waffle.jpg" alt="Waffle" style="width: 100%">
+      <div class="caption">
+       <p> Homemade Waffle</p>
+      </div>
+     </a>
+    </div>          
+   </div>
+
+   <div class="col-md-4">
+    <div class="thumbnail">
+     <a href="recipes-details.html" target="_blank">
+      <img src="img/cheesecake.jpg" alt="Cheesecake" style="width: 100%">
+      <div class="caption">
+       <p> Cheesecake</p>
+      </div>
+     </a>
+    </div>          
+   </div>
+
+ </div>
+</div> 
+</div>
+</div>
+</div>
+
+<form class="form-inline my-2 my-lg-0" action="searchresults.html">
+ <div class="text-center">
+  <button class="btn btn-danger float-center my-2 my-sm-0" type="submit">  <span class="glyphicon glyphicon-search"> </span> Load more results </button>  
+ </div>
+</form>
+
+</div>
+</div>
+
+</main>
+</div>
+</section>
+
+<!--Start of Footer -->
+ <footer class="foot">
+ <div class="container">
+  <div class="row">
+   <div class="col text-center">
+    <p></p>
+  </div>
+  </div>
+ </div>
+ </footer>
+<!-- End of Footer -->
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

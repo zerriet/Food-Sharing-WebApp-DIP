@@ -1,0 +1,43 @@
+.u-section-1 {background: rgba(255,255,255);}
+.u-section-1 .u-sheet-1 {min-height: 150px}
+.u-section-1 .u-layout-wrap-1 {margin: 107px auto 0 0}
+.u-section-1 .u-layout-cell-1 {min-height: 100px}
+.u-section-1 .u-container-layout-1 {padding: 30px}
+.u-section-1 .u-text-1 {font-weight: 700; line-height: 1.4; font-size: 3rem; margin: 0 390px 10px}
+
+
+.u-section-2 {background: rgba(255,255,255);}
+.u-section-2 .u-sheet-2 {min-height: 600px;}
+.u-section-2 .u-layout-cell-2 {min-height: 800px; margin-bottom: 100px}
+.u-section-2 .u-container-layout-2 {padding: 30px}
+.u-section-2 .u-image-1 {min-height: 476px; background-image: url("images/BakingSoda.jpg"); background-position: 70% 10%; border-radius: 20%}
+.u-section-2 .u-container-layout-2 {padding: 30px 0 0 30px} 
+
+@media{ 
+.u-section-2 .u-image-1 {height: auto; width: 50%; margin-left: auto; margin-right: auto;} 
+}
+
+.u-section-3 {background: rgba(255,255,255);}
+.u-section-3 .u-sheet-4 {min-height: 300px}
+.u-section-3 .u-layout-wrap-1 {margin: 107px auto 0 0}
+.u-section-3 .u-layout-cell-1 {margin-top: 280px}
+.u-section-3 .u-container-layout-1 {padding: 30px}
+.u-section-3 .u-container-layout-2 {padding: 10px}
+.u-section-3 .u-text-1 {font-weight: 250; line-height: 1.1; font-size: 2.5rem; margin: 5}
+.u-section-3 .u-text-2 {font-weight: 250; line-height: 1.1; font-size: 3rem;}
+
+.u-section-4 {background: rgba(255,255,255);}
+.u-section-4 .u-sheet-4 {min-height: 100px}
+.u-section-4 .u-layout-wrap-1 {margin: 207px auto 0 0}
+.u-section-4 .u-layout-cell-1 {margin-top: 100px}
+.u-section-4 .u-container-layout-1 {padding: 30px}
+.u-section-4 .u-container-layout-2 {padding: 10px}
+.u-section-4 .u-text-1 {font-weight: 250; line-height: 1.1; font-size: 2.5rem; margin: 5}
+.u-section-4 .u-text-2 {font-weight: 250; line-height: 1.1; font-size: 3rem;}
+
+.u-section-5 {background: rgba(255,255,255);}
+.u-section-5 .u-sheet-1 {min-height: 600px}
+.u-section-5 .u-btn-1 {padding: 0}
+.u-section-5 .u-layout-cell-1 {min-height: 100px}
+.u-section-5 .u-text-3 {font-weight: 250; line-height: 1.1; font-size: 2rem;}
+

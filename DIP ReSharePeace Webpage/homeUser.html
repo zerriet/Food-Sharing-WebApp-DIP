@@ -68,7 +68,7 @@
               <path d="M24.39,26.276l-4.9-4.9a12.012,12.012,0,1,1,1.885-1.885l4.9,4.9a1.334,1.334,0,0,1-1.886,1.886ZM2.666,12a9.329,9.329,0,0,0,15.827,6.7,1.338,1.338,0,0,1,.206-.206A9.332,9.332,0,1,0,2.666,12Z"/>
             </svg>
           </a>
-          <a href="profile.html" class="ml-4 ml-md-4 mr-2 mr-md-0 circle"><img src="assets/images/avatars/user.png" alt="Avatar"></a>
+          <a href="myprofile2?userid=1001.html" class="ml-4 ml-md-4 mr-2 mr-md-0 circle"><img src="assets/images/avatars/user.png" alt="Avatar"></a>
           <div class="collapse navbar-collapse" id="menu-4">
           <ul class="navbar-nav m-auto pt-3 pt-lg-0">
             <li class="nav-item dropdown">
@@ -76,8 +76,21 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> My Account </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            <a class="dropdown-item" href="homeUser.html"> <i class="fa fa-home faa-wrench animated-hover" aria-hidden="true"> </i> Home</a>
-           <a class="dropdown-item" href="profile.html"> <i class="fa fa-heart faa-pulse animated-hover" aria-hidden="true"> </i> Profile</a>
+           <a class="dropdown-item" href="myprofile2?userid=1001.html"> <i class="fa fa-heart faa-pulse animated-hover" aria-hidden="true"> </i> Profile</a>
            <a class="dropdown-item" href="shop.html"> <i class="fas fa-shopping-cart faa-wrench animated-hover" aria-hidden="true"> </i> Shop</a>
+           <a class="dropdown-item" onclick="OpenZoomClone()"> <i class="fa fa-plus" aria-hidden="true"> </i> Start Class</a>
+           <script>
+           function OpenZoomClone() {
+           var NewId = getGuid();
+           window.open('https://arcane-savannah-98517.herokuapp.com/'+ NewId + '?open=true')
+           }
+           function getGuid() {
+           return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+           var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+           return v.toString(16);
+           });
+           }
+           </script>
            <a class="dropdown-item" href="home.html"> <i class="fas fa-power-off faa-burst animated-hover" aria-hidden="true"> </i> Logout</a>
           </div>
         </div>

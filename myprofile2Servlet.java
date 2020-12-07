@@ -109,6 +109,7 @@ public class myprofile2Servlet extends HttpServlet {
           out.println("<link href='assets/css/jquery.mCustomScrollbar.min.css' rel='stylesheet' type='text/css' media='all'>");
           out.println("<link href='assets/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>");
           out.println("<link href='assets/css/styles.css' rel='stylesheet' type='text/css' media='all'>");
+          out.println("<link rel='stylesheet' href='assets/css/nicepage.css' media='screen'>");
           out.println("<link rel='stylesheet' href='assets/css/profile.css' media='screen'>");
           out.println("<link rel='stylesheet' href='css/font-awesome.min.css'>");
           out.println("<link rel='stylesheet' href='css/font-awesome-animation.min.css'>");
@@ -506,7 +507,7 @@ public class myprofile2Servlet extends HttpServlet {
                       out.println("</div>");
                       out.println("<div class='u-align-left u-container-style u-tab-pane u-white u-tab-pane-2' id='link-tab-2365' role='tabpanel' aria-labelledby='tab-2365'>");
                         out.println("<div class='u-container-layout u-valign-top u-container-layout-2'>");
-                          out.println("<a href='AddRecipe.html' class='u-border-2 u-border-grey-75 u-border-radius-11 u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-btn-1'>");
+                          out.println("<a href='AddRecipe-2.html' class='u-border-2 u-border-grey-75 u-border-radius-11 u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-btn-1'>");
                             out.println("<span class='u-icon u-icon-5'>");
                               out.println("<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' xml:space='preserve' class='u-svg-content' viewBox='0 0 448 448' style='width: 1em; height: 1em;''><path d='m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0'></path></svg>");
                             out.println("</span>&nbsp;Add recipe");
@@ -551,10 +552,10 @@ public class myprofile2Servlet extends HttpServlet {
                              out.println(" </div>");
                               out.println("<div class='u-gallery-item' data-image-width='800' data-image-height='450'>");
                                 out.println("<div class='u-back-slide'>");
-                                  out.println("<img class='u-back-image u-expanded' src='images/instantramen.jpg' alt='Instant Ramen'>");
+                                  out.println("<img class='u-back-image u-expanded' src='" + rset2.getString("recipe_photo")  + "' alt='" + rset2.getString("recipe_name")  + "'>");
                                 out.println("</div>");
                                 out.println("<div class='u-over-slide u-shading u-valign-bottom u-over-slide-9'>");
-                                  out.println("<h6 class='u-align-center u-custom-font u-font-Lobster u-gallery-heading u-text-grey-5' style='background-image: none; font-weight: 400;''>Instant Ramen</h6>");
+                                  out.println("<h6 class='u-align-center u-custom-font u-font-Lobster u-gallery-heading u-text-grey-5' style='background-image: none; font-weight: 400;''>" + rset2.getString("recipe_name")  + "</h6>");
                                   out.println("<p class='u-gallery-text'></p>");
                                out.println(" </div>");
                               out.println("</div>");
@@ -657,7 +658,7 @@ public class myprofile2Servlet extends HttpServlet {
           out.println("</body>");
           out.println("</html>");
                 
-                      out.println("<p>Username: " + rset2.getString("username") +  "</p>");
+                     /* out.println("<p>Username: " + rset2.getString("username") +  "</p>");
                       out.println("<p>Name: " + rset2.getString("Firstname") +  "</p>");
                       out.println("<p>Account Status: " + rset2.getString("user_status") +  "</p>");
                       out.println("<p>Contact Infofmation: " + rset2.getString("user_FB") +  "</p>");
@@ -672,7 +673,7 @@ public class myprofile2Servlet extends HttpServlet {
                         out.println("<p> <input type='submit' name='recipe_name' value=" + rset2.getString("recipe_name")  + "</p>");
                         
                          //out.println("<p>" + rset2.getString("recipe_name") + "</p>");
-                         out.println("<p>" + rset2.getString("recipe_rating") + "</p>");
+                         out.println("<p>" + rset2.getString("recipe_rating") + "</p>"); */
 
                
                }
